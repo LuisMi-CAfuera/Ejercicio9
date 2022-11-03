@@ -75,13 +75,16 @@ class Personaje {
     //Funcion que me devuelva un arraylist de 5 objetos de valor del 1 al 50 y que el peso de todos los objetos no supere el peso de la mochila
     fun Objetos(): ArrayList<Objetos> {
         var objetos = ArrayList<Objetos>()
-        var peso = 0
-        var valor = 0
-        var i = 0
-        while (mochila > peso && i < 5) {
+        var peso = (1..10).random()
+        var valor = (1..50).random()
+        var contP = 0
+        contP += peso
+        var i = 1
+        while (mochila >= contP  && i < 5) {
             peso = (1..10).random()
             valor = (1..50).random()
             objetos.add(Objetos(peso, valor))
+            contP += peso
             i++
         }
         return objetos
