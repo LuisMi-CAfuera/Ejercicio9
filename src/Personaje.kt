@@ -6,22 +6,30 @@ class Personaje {
     var mochila = Mochila()
     var objetos = Objetos()
     var monedero : Map<String,Int> = mapOf(
-        "1" to 0,
-        "5" to 0,
-        "10" to 0,
-        "25" to 0,
-        "100" to 0
+        "1" to (0..100).random(),
+        "5" to (0..100).random(),
+        "10" to (0..100).random(),
+        "25" to (0..100).random(),
+        "100" to (0..100).random()
     )
 
-    constructor(nombre: String, clase: String, estado: String, raza: String,mochila : Int) {
+    constructor(nombre: String, clase: String, estado: String, raza: String,mochila : Int, objetos : ArrayList<Objetos>, monedero : Map<String,Int>) {
         this.nombre = nombre
         this.clase = clase
         this.estado = estado
         this.raza = raza
         this.mochila = mochila
+        this.objetos = objetos
+        this.monedero = monedero
     }
 
+
     constructor()
+    constructor(clase: String, mochila: Int, objetos: ArrayList<Objetos>, monedero: Map<String, Int>) {
+        this.clase = clase
+        this.objetos = objetos
+        this.monedero = monedero
+    }
 
     //Funcion que me diga que raza es aleatoriamente
     fun Raza(): String {
@@ -90,9 +98,28 @@ class Personaje {
         return objetos
     }
 
-    override fun toString(): String {
-        return "Personaje(nombre='$nombre', raza='$raza', estado='$estado', clase='$clase', mochila=$mochila, objetos=$objetos, monedero=$monedero)"
+    fun crearPersonaje():Personaje{
+        var personaje = Personaje()
+
+        println("¿Que raza quieres que sea?(Elfo,Humano,Enano,Goblin o una que te inventes)")
+        personaje.raza = readLine().toString()
+        println("¿Que nombre quieres que tenga?(Si el personaje es un Elfo o un Goblin el nombre estara en elfico o goblin)")
+        personaje.nombre = readLine().toString()
+        println("¿Que edad quieres que tenga?(Adolescente,Adulto o Anciano)")
+        personaje.estado = readLine().toString()
+        println("¿Que clase quieres ser?(Mago,Guerrero,Ladron,Mercader o Berserk)")
+        personaje.clase = readLine().toString()
+
+        return personaje
     }
+
+
+
+    override fun toString(): String {
+        return "Personaje:\n nombre='$nombre'\n raza='$raza'\n estado='$estado'\n clase='$clase'\n mochila=$mochila\n objetos=$objetos\n monedero=$monedero"
+    }
+
+
 
 
 }

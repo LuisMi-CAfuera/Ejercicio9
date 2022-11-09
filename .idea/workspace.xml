@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="19a74133-aaa2-49a3-9c34-9e6eb65da70a" name="Changes" comment="2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Personaje.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Personaje.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -35,7 +36,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Users/AlumnoM/Documents/DAM2-PMDM/Ladron/src/Ladron.kt"
+    "last_opened_file_path": "C:/Users/LuisMi/Documents/Clases/AplicacionesMoviles/Ejercicio8Comunicacion/src/Personaje.kt"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
