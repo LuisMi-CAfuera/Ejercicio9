@@ -34,13 +34,13 @@ fun main() {
         }
 
 
-        println("¿El mercader quiere comerciar contigo que le ofreces?")
+        println("¿El mercader quiere comerciar contigo que le ofreces?\n")
 
 
 
-            println("Pon el valor de los objetos que quieres vender")
-            println("Si no quieres vender nada mas pon 0")
-            println("Estos son tus objetos:\n${pJugador.objetos}")
+            println("Pon el valor de los objetos que quieres vender\n")
+            println("Si no quieres vender nada mas o para acaba pon 0\n")
+            println("Estos son tus objetos:\n${pJugador.objetos}\n")
 
             do {
                 valor = readLine()!!.toInt()
@@ -64,34 +64,34 @@ fun main() {
             precio += it.valor
         }
 
-        println("Mercader :\n el valor de los objetos que me quieres vender es $precio")
-        println("Te voy a dar estas monedas")
+        println("Mercader :\n el valor de los objetos que me quieres vender es $precio\n")
+        println("Te voy a dar estas monedas\n")
 
 
         //Todos estos if son para que le mercader reparte en diferentes monedas el precio
         cociente = precio / 100
         if (cociente > 0) {
-            println("De 100 te voy a dar: $cociente")
+            println("De 100 te voy a dar: $cociente\n")
             precio -= 100 * cociente
         }
         cociente = precio / 25
         if (cociente > 0) {
-            println("De 25 te voy a dar: $cociente")
+            println("De 25 te voy a dar: $cociente\n")
             precio -= 25 * cociente
         }
         cociente = precio / 10
         if (cociente > 0) {
-            println("De 10 te voy a dar: $cociente")
+            println("De 10 te voy a dar: $cociente\n")
             precio -= 10 * cociente
         }
         cociente = precio / 5
         if (cociente > 0) {
-            println("De 5 te voy a dar: $cociente")
+            println("De 5 te voy a dar: $cociente\n")
             precio -= 5 * cociente
         }
         cociente = precio / 1
         if (cociente > 0) {
-            println("De 1 te voy a dar: $cociente")
+            println("De 1 te voy a dar: $cociente\n")
             precio -= 1 * cociente
         }
 
@@ -102,9 +102,9 @@ fun main() {
         pJugador.objetos.removeAll(obVender)
 
 
-        println("Objetos de mercader : ${mercader.objetos}")
+        println("Objetos de mercader : ${mercader.objetos}\n")
 
-        println("Objetos de Jugador : ${pJugador.objetos}")
+        println("Objetos de Jugador : ${pJugador.objetos}\n")
 
 
 
