@@ -5,12 +5,14 @@ fun main() {
     var pJugador = Personaje()
     var pJugador2 = Personaje()
     //Como el mercader siempre tiene que tener espacio suficiente y dinero suficiente para compra objetos
-    var mercader = Personaje("Mercader",  100, arrayListOf(), mutableMapOf(
-        "1" to 100,
-        "5" to 100,
-        "10" to 100,
-        "25" to 100,
-        "100" to 100)
+    var mercader = Personaje(
+        "Mercader", 100, mutableMapOf(
+            "1" to 100,
+            "5" to 100,
+            "10" to 100,
+            "25" to 100,
+            "100" to 100
+        )
     )
 
 
@@ -34,13 +36,34 @@ fun main() {
         }
 
 
-        println("¿Con que Jugador quieres jugar? (1/2)")
+        println("¿Que jugador quieres que intercambie?(Si quieres que sea el mercader por defecto pon mercader) ")
+        println("Vendedor")
         respuesta = readLine().toString()
+        println("Mercader")
+        var respuesta2 = readLine().toString()
 
-        if (respuesta == "1"){
-            pJugador=pJugador.intercambio(pJugador,mercader)
-        }else{
-            pJugador2=pJugador2.intercambio(pJugador2,mercader)
+        if (respuesta == "Jugador1" && respuesta2 == "mercader") {
+            pJugador = pJugador.intercambio(pJugador, mercader)
+        } else {
+            if (respuesta == "Jugador2" && respuesta2 == "mercader") {
+                pJugador2 = pJugador2.intercambio(pJugador2, mercader)
+            } else {
+                if (respuesta == "Jugador1" && respuesta2 == "Jugador2") {
+                    pJugador = pJugador.intercambio(pJugador, mercader)
+                } else {
+                    if (respuesta == "Jugador2" && respuesta2 == "Jugador1") {
+                        pJugador2 = pJugador2.intercambio(pJugador2, mercader)
+                    }else{
+                        if (respuesta == "mercader" && respuesta2 == "Jugador1") {
+                            pJugador = pJugador.intercambio(pJugador, mercader)
+                        }else{
+                            if (respuesta == "mercader" && respuesta2 == "Jugador2") {
+                                pJugador2 = pJugador2.intercambio(pJugador2, mercader)
+                            }
+                        }
+                    }
+                }
+            }
         }
 
 
@@ -52,8 +75,9 @@ fun main() {
         respuesta = readLine().toString()
 
 
-    }while (respuesta != "N" && respuesta != "n" && respuesta != "No" && respuesta != "no")
+    } while (respuesta != "N" && respuesta != "n" && respuesta != "No" && respuesta != "no")
 }
+
 
 
 

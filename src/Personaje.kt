@@ -25,9 +25,8 @@ class Personaje {
 
 
     constructor()
-    constructor(clase: String, mochila: Int, objetos: ArrayList<Objetos>, monedero: MutableMap<String,Int>) {
+    constructor(clase: String, mochila: Int, monedero: MutableMap<String,Int>) {
         this.clase = clase
-        this.objetos = objetos
         this.monedero = monedero
     }
 
