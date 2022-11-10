@@ -112,15 +112,14 @@ class Personaje {
         return personaje
     }
 
-    fun intercambio(Jugador:Personaje,Mercader:Personaje):Personaje{
+    fun intercambio(Jugador:Personaje,Mercader:Personaje){
         var cont = 0
         var valor = 0
         var obVender = arrayListOf<Objetos>()
         var precio = 0
         var cociente = 0
         var arrval = arrayListOf<Int>()
-        Mercader.clase= "Mercader"
-        Mercader.mochila = 100
+        Mercader.mochila = 1000
 
 
 
@@ -167,7 +166,6 @@ class Personaje {
             println("De 100 te voy a dar: $cociente\n")
             precio -= 100 * cociente
             Jugador.monedero["100"] = Jugador.monedero["100"]!! + cociente
-            Mercader.monedero["100"] = Mercader.monedero["100"]!! - cociente
 
 
         }
@@ -176,7 +174,6 @@ class Personaje {
             println("De 25 te voy a dar: $cociente\n")
             precio -= 25 * cociente
             Jugador.monedero["25"] = Jugador.monedero["25"]!! + cociente
-            Mercader.monedero["25"] = Mercader.monedero["25"]!! - cociente
 
         }
         cociente = precio / 10
@@ -184,21 +181,21 @@ class Personaje {
             println("De 10 te voy a dar: $cociente\n")
             precio -= 10 * cociente
             Jugador.monedero["10"] = Jugador.monedero["10"]!! + cociente
-            Mercader.monedero["10"] = Mercader.monedero["10"]!! - cociente
+
         }
         cociente = precio / 5
         if (cociente > 0) {
             println("De 5 te voy a dar: $cociente\n")
             precio -= 5 * cociente
             Jugador.monedero["5"] = Jugador.monedero["5"]!! + cociente
-            Mercader.monedero["5"] = Mercader.monedero["5"]!! - cociente
+
         }
         cociente = precio / 1
         if (cociente > 0) {
             println("De 1 te voy a dar: $cociente\n")
             precio -= 1 * cociente
             Jugador.monedero["1"] = Jugador.monedero["1"]!! + cociente
-            Mercader.monedero["1"] = Mercader.monedero["1"]!! - cociente
+
         }
 
 
@@ -209,7 +206,7 @@ class Personaje {
 
 
         println("Objetos de mercader : ${Mercader.objetos}\n")
-        println("Monedero Mercader:\n${Mercader.monedero}\n")
+
 
         println("Objetos de Jugador : ${Jugador.objetos}\n")
         println("Monedero Jugador:\n${Jugador.monedero}\n")
@@ -217,7 +214,6 @@ class Personaje {
 
 
 
-        return Jugador
     }
 
 
