@@ -8,7 +8,7 @@ fun main() {
         var pJugador2 = Personaje()
         //Como el mercader siempre tiene que tener espacio suficiente y dinero suficiente para compra objetos
         var mercader = Personaje(
-            "Mago", 100, mutableMapOf(
+            "Mercader", 100, mutableMapOf(
                 "1" to 100,
                 "5" to 100,
                 "10" to 100,
