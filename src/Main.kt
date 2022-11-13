@@ -8,7 +8,7 @@ fun main() {
         var pJugador2 = Personaje()
         //Como el mercader siempre tiene que tener espacio suficiente y dinero suficiente para compra objetos
         var mercader = Personaje(
-            "Mercader", 100, mutableMapOf(
+            "Mago", 100, mutableMapOf(
                 "1" to 100,
                 "5" to 100,
                 "10" to 100,
@@ -22,7 +22,7 @@ fun main() {
         var respuesta = readLine().toString()
 
 
-        if (respuesta == "S" || respuesta == "s" || respuesta == "Si" || respuesta == "si") {
+        if (respuesta.equals("S", true)) {
             println("Jugador 1:\n${pJugador}")
             println("Jugador 2:\n${pJugador2}")
         } else {
@@ -41,23 +41,23 @@ fun main() {
 
 
         //Este if es para controlar que siempre haya uno de los dos que intercambien
-        if (respuesta == "Jugador1" && (respuesta2 == "mercader" && mercader.clase == "Mercader")) {
+        if ((respuesta == "Jugador1" && pJugador.clase== "Mercader") || (respuesta2 == "mercader" && mercader.clase == "Mercader")) {
             pJugador.intercambio(pJugador, mercader)
         } else {
-            if (respuesta == "Jugador2" && (respuesta2 == "mercader" && mercader.clase == "Mercader")) {
+            if ((respuesta == "Jugador2" && pJugador2.clase=="Mercader") || (respuesta2 == "mercader" && mercader.clase == "Mercader")) {
                 pJugador2.intercambio(pJugador2, mercader)
             } else {
-                if (respuesta == "Jugador1" && (respuesta2 == "Jugador2" && pJugador2.clase == "Mercader")) {
-                    pJugador.intercambio(pJugador, mercader)
+                if ((respuesta == "Jugador1" && pJugador.clase=="Mercader") || (respuesta2 == "Jugador2" && pJugador2.clase == "Mercader")) {
+                    pJugador.intercambio(pJugador, pJugador2)
                 } else {
-                    if (respuesta == "Jugador2" && (respuesta2 == "Jugador1" && pJugador.clase == "Mercader")) {
-                        pJugador2.intercambio(pJugador2, mercader)
+                    if ((respuesta == "Jugador2" && pJugador2.clase=="Mercader") || (respuesta2 == "Jugador1" && pJugador.clase == "Mercader")) {
+                        pJugador2.intercambio(pJugador2, pJugador)
                     } else {
-                        if (respuesta == "mercader" && (respuesta2 == "Jugador1" && pJugador.clase == "Mercader")) {
-                            pJugador.intercambio(pJugador, mercader)
+                        if ((respuesta2 == "mercader" && mercader.clase == "Mercader") || (respuesta2 == "Jugador1" && pJugador.clase == "Mercader")) {
+                            pJugador.intercambio(mercader, pJugador)
                         } else {
-                            if (respuesta == "mercader" && (respuesta2 == "Jugador2" && pJugador2.clase == "Mercader")) {
-                                pJugador2.intercambio(pJugador2, mercader)
+                            if ((respuesta2 == "mercader" && mercader.clase == "Mercader") || (respuesta2 == "Jugador2" && pJugador2.clase == "Mercader")) {
+                                pJugador2.intercambio(mercader, pJugador2)
                             } else {
                                 println("No se ha podido realizar el intercambio por que ninguno de los jugadores es el mercader")
                             }
@@ -76,7 +76,7 @@ fun main() {
         respuesta = readLine().toString()
 
 
-    } while (respuesta != "N" && respuesta != "n" && respuesta != "No" && respuesta != "no")
+    } while (!respuesta.equals("N", true))
 }
 
 

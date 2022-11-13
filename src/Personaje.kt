@@ -3,7 +3,7 @@ class Personaje {
     var raza = Raza()
     var estado = Edad()
     var clase = Clase()
-    var mochila = Mochila()
+    var mochila = Dado()
     var objetos = Objetos()
     var monedero : MutableMap<String,Int> = mutableMapOf(
         "1" to 0,
@@ -71,7 +71,7 @@ class Personaje {
     }
 
     //Funcion que me de el tamaño de la mochila del 1 al 6 y luego el resultado se multiplica por 10 para que sea el peso
-    fun Mochila(): Int {
+    fun Dado(): Int {
         var mochila: Int = 0
         var tam = arrayOf(1, 2, 3, 4, 5, 6)
 
@@ -120,6 +120,7 @@ class Personaje {
         var cociente = 0
         var arrval = arrayListOf<Int>()
         Mercader.mochila = 1000
+        Mercader.clase = "Mercader"
 
 
 
