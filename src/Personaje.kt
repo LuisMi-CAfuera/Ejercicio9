@@ -119,6 +119,7 @@ class Personaje {
         var precio = 0
         var cociente = 0
         var arrval = arrayListOf<Int>()
+        var flag = false
         Mercader.mochila = 1000
         Mercader.clase = "Mercader"
 
@@ -141,16 +142,16 @@ class Personaje {
 
             //Aqui compruebo el valo metido por pantalla y si coincide con los objetos que tiene el jugador lo añado al array que le voy a dar al mercader
             for (i in arrval) {
-                cont=0
+
                 for (j in Jugador.objetos) {
                     if (i == j.valor) {
                         obVender.add(j)
                     } else {
-                        cont++
+                        flag = true
                     }
                 }
             }
-        }while (cont == Jugador.objetos.size)
+        }while (flag)
 
         //Aqui compruebo que el valor de los objetos que quiere vender no supere el peso de la mochila}
         obVender.forEach(){
